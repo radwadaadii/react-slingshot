@@ -15,10 +15,10 @@ jobs:
     steps:
       - checkout
       - run: npm i
-      - save_cache:
-        key: "npm-packages"
-        paths:
-          - /src/node_modules
+  #    - save_cache:
+  #      key: "npm-packages"
+  #      paths:
+  #        - /src/node_modules
       - run:
           command: "npm run lint"
           
@@ -31,11 +31,11 @@ jobs:
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
     steps:
       - checkout
-      - restore_cache:
-        keys:
-          - "npm-packages"
-        paths:
-          - /src/node_modules
+ #     - restore_cache:
+ #       keys:
+ #         - "npm-packages"
+ #       paths:
+ #         - /src/node_modules
       - run: npm i
       - run:
           command: "npm run test"
@@ -49,11 +49,11 @@ jobs:
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
     steps:
       - checkout
-      - restore_cache:
-        keys:
-          - "npm-packages"
-        paths:
-          - /src/node_modules
+#      - restore_cache:
+#        keys:
+#          - "npm-packages"
+#        paths:
+#          - /src/node_modules
       - run: npm i
       - run:
           command: "npm audit"
